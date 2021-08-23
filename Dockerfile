@@ -22,6 +22,7 @@ RUN pipenv install --skip-lock --system
 # copy project
 COPY slack-matrix-migration /usr/src/app/slack-matrix-migration/
 COPY *.md /usr/src/app/slack-matrix-migration/
+COPY entrypoint.sh /usr/src/app/entrypoint.sh
 
 WORKDIR /usr/src/app/slack-matrix-migration/
 RUN python setup.py install
