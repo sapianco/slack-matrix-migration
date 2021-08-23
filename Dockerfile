@@ -20,14 +20,12 @@ COPY ./Pipfile /usr/src/app/Pipfile
 RUN pipenv install --skip-lock --system
 
 # copy project
-COPY slak-matrix-migration /usr/src/app/slak-matrix-migration/
-COPY *.md /usr/src/app/slak-matrix-migration/
-COPY conf/uwsgi.ini /app/
-COPY conf/nginx/ /etc/nginx/conf.d/
+COPY slack-matrix-migration /usr/src/app/slack-matrix-migration/
+COPY *.md /usr/src/app/slack-matrix-migration/
 
-WORKDIR /usr/src/app/slak-matrix-migration/
+WORKDIR /usr/src/app/slack-matrix-migration/
 RUN python setup.py install
-CMD python slak-matrix-migration/app.py
+CMD python slack-matrix-migration/migrate.py
 
 # run entrypoint.sh
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
@@ -37,12 +35,11 @@ ARG VCS_REF
 ARG VERSION
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.name="slak-matrix-migration" \
-      org.label-schema.description="Here is a simple Python Flask for receiving a recording from doe.dialbox.cloud." \
+      org.label-schema.name="slack-matrix-migration" \
+      org.label-schema.description="Migrates Users, Channels and all the conversations from a Slack export to Matrix" \
       org.label-schema.url="https://www.sapian.cloud" \
-      org.label-schema.vcs-url="https://git.sapian.com.co/Sapian/slak-matrix-migration" \
+      org.label-schema.vcs-url="https://github.com/sapianco/slack-matrix-migration" \
       org.label-schema.maintainer="sebastian.rojo@sapian.com.co" \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vendor1="Sapian" \
-      org.label-schema.version=$VERSION \
-      org.label-schema.vicidial-schema-version="1"
+      org.label-schema.version=$VERSION

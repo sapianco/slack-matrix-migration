@@ -31,7 +31,15 @@ To ensure the next enhacements.
 
 ``` bash
 version=0.1.1
-docker build --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') --build-arg VCS_REF=$(git rev-parse --short HEAD)  -t sapian/slak-matrix-migration:latest -t sapian/slak-matrix-migration:${version} --build-arg VERSION=${version} .
+docker build \
+  --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
+  --build-arg VCS_REF=$(git rev-parse --short HEAD) \
+  --tag sapian/slack-matrix-migration:latest \
+  --tag sapian/slack-matrix-migration:${version} \
+  --tag quay.io/sapian/slack-matrix-migration:latest \
+  --tag quay.io/sapian/slack-matrix-migration:${version} \
+  --build-arg VERSION=${version} 
+  .
 ```
 
 # build multiarch and push
@@ -42,36 +50,36 @@ docker buildx build --push \
     --platform linux/arm64/v8,linux/amd64,linux/arm/v7 \
     --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
     --build-arg VCS_REF=$(git rev-parse --short HEAD) \
-    --tag custom/slak-matrix-migration:latest \
-    --tag quay.io/custom/slak-matrix-migration:latest \
-    --tag custom/slak-matrix-migration:${version} \
-    --tag quay.io/custom/slak-matrix-migration:${version} \
+    --tag sapian/slack-matrix-migration:latest \
+    --tag quay.io/sapian/slack-matrix-migration:latest \
+    --tag sapian/slack-matrix-migration:${version} \
+    --tag quay.io/sapian/slack-matrix-migration:${version} \
     .
 ```
 
 # Set developing enviroment
 
 ``` bash
-conda create -n slak-matrix-migration python=3.9
-/opt/$USER/anaconda3/envs/slak-matrix-migration/bin/pip install pipenv
-/opt/$USER/anaconda3/envs/slak-matrix-migration/bin/pipenv --python=/opt/$USER/anaconda3/envs/slak-matrix-migration/bin/python install
-/opt/$USER/anaconda3/envs/slak-matrix-migration/bin/pipenv --python=/opt/$USER/anaconda3/envs/slak-matrix-migration/bin/python install --dev
+conda create -n slack-matrix-migration python=3.9
+/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/pip install pipenv
+/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/pipenv --python=/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/python install
+/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/pipenv --python=/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/python install --dev
 ```
 
 ## Ipyhon
 
 ``` bash
-cd ~/Workspace/slak-matrix-migration/
-conda activate slak-matrix-migration
-/opt/$USER/anaconda3/envs/slak-matrix-migration/bin/pipenv run ipython
+cd ~/Workspace/slack-matrix-migration/
+conda activate slack-matrix-migration
+/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/pipenv run ipython
 ```
 
 ## Activate Conda and Pipenv
 
 ``` bash
-cd ~/Workspace/slak-matrix-migration/
-conda activate slak-matrix-migration
-/opt/$USER/anaconda3/envs/slak-matrix-migration/bin/pipenv shell
+cd ~/Workspace/slack-matrix-migration/
+conda activate slack-matrix-migration
+/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/pipenv shell
 ```
 
 # Do migration
@@ -135,7 +143,7 @@ PYTHONWARNINGS="ignore:Unverified HTTPS request"
 2. [Activate Conda and Pipenv](#activate-conda-and-pipenv)
 3. Get a zipped Export of your Slack Workspace (https://slack.com/help/articles/201658943) and put on `data/`
 4. Copy `config/config_example.yaml` to `config/config.yaml` and edit to your needs (use the `as_token` from your `migration_service.yaml`)
-5. Run `python3 slak-matrix-migration/slak-matrix-migration/migrate.py`
+5. Run `python3 slack-matrix-migration/slack-matrix-migration/migrate.py`
 
 ## Cleanup
 1. Remove the Application Service from your `homeserver.yaml`
@@ -152,5 +160,5 @@ PYTHONWARNINGS="ignore:Unverified HTTPS request"
 
 3. Run Docker
   ``` Bash
-  docker run --env-file .env -v $(pwd)/log:/app/log -v $(pwd)/data:/app/data -v $(pwd)/run:/app/run -v $(pwd)/conf:/app/conf --rm -it sapian slak-matrix-migration:latest
+  docker run --env-file .env -v $(pwd)/log:/usr/src/app/slack-matrix-migration/log -v $(pwd)/data:/usr/src/app/slack-matrix-migration/data -v $(pwd)/run:/usr/src/app/slack-matrix-migration/run -v $(pwd)/conf:/usr/src/app/slack-matrix-migration/conf --rm -it sapian/slack-matrix-migration:latest
   ```

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # vim: set fileencoding=utf-8 :
 #
-#       slak-matrix-migration/slak-matrix-migration/app.py
+#       slack-matrix-migration/slack-matrix-migration/app.py
 #       Copyright 2020 sebastian.rojo <sebastian.rojo@sapian.com.co>
 #
 #       This program is free software; you can redistribute it and/or modify
@@ -48,7 +48,7 @@ registry = CollectorRegistry()
 def terminateProcess(signalNumber, frame):
     log.error('(SIGTERM) terminating the process')
     if PROMETHEUS_PUSH_GW:
-        pushadd_to_gateway(PROMETHEUS_PUSH_GW, job='slak-matrix-migration', registry=registry)
+        pushadd_to_gateway(PROMETHEUS_PUSH_GW, job='slack-matrix-migration', registry=registry)
     sys.exit(1)
 
 if __name__ == '__main__':
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     duration = Gauge('slak_matrix_migration_duration_seconds', 'Duration of batch job', registry=registry)
     try:
         with duration.time():
-            log.info('Starting... slak-matrix-migration')
+            log.info('Starting... slack-matrix-migration')
             sleep_sec=randint(10,100)
             log.info("Sleeping... for {} sec".format(sleep_sec))
             sleep(sleep_sec)
@@ -78,4 +78,4 @@ if __name__ == '__main__':
         last_success.set_to_current_time()
     finally:
         if PROMETHEUS_PUSH_GW:
-            pushadd_to_gateway(PROMETHEUS_PUSH_GW, job='slak-matrix-migration', registry=registry)
+            pushadd_to_gateway(PROMETHEUS_PUSH_GW, job='slack-matrix-migration', registry=registry)
