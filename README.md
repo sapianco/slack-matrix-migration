@@ -1,3 +1,5 @@
+[![Docker Repository on Quay](https://quay.io/repository/sapian/slack-matrix-migration/status "Docker Repository on Quay")](https://quay.io/repository/sapian/slack-matrix-migration)
+
 # Slack to Matrix Migration
 
 <img src="wiki/images/Logo_circular_Matrix_server_slack_migration_name_bg.svg" width="600">
