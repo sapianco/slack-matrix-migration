@@ -27,6 +27,10 @@ To ensure the next enhacements.
 - better logging
 - Env configuration and dot.env support
 - Fix massive Invites for large Slack Teams.
+- Multiarch
+  - linux/arm64/v8
+  - linux/amd64
+  - linux/arm/v7
 
 
 # Build And Push to docker registry
