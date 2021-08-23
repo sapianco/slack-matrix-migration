@@ -1,7 +1,7 @@
-""" slack-matrix-migration Here is a simple repo template for python pip Docker Projects (Sapian Standar)
+""" slack-matrix-migration Migrates Users, Channels and all the conversations from a Slack export to Matrix
 
 See:
-https://git.sapian.com.co/Sapian/slack-matrix-migration
+https://github.com/sapianco/slack-matrix-migration
 """
 # Always prefer setuptools over distutils
 from setuptools import setup, find_packages
@@ -51,7 +51,7 @@ setup(
     # This is a one-line description or tagline of what your project does. This
     # corresponds to the "Summary" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#summary
-    description='slack-matrix-migration Here is a simple repo template for python pip Docker Projects (Sapian Standar)'
+    description='slack-matrix-migration Migrates Users, Channels and all the conversations from a Slack export to Matrix'
                 'https://www.sapian.com.co/',
     # This is an optional longer description of your project that represents
     # the body of text which users will see when they visit PyPI.
@@ -67,7 +67,7 @@ setup(
     #
     # This field corresponds to the "Home-Page" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#home-page-optional
-    url='https://git.sapian.com.co/Sapian/slack-matrix-migration',
+    url='https://github.com/sapianco/slack-matrix-migration',
 
     # This should be your name or the name of the organization which owns the
     # project.

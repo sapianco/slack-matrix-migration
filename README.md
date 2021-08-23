@@ -38,8 +38,7 @@ docker build \
   --tag sapian/slack-matrix-migration:${version} \
   --tag quay.io/sapian/slack-matrix-migration:latest \
   --tag quay.io/sapian/slack-matrix-migration:${version} \
-  --build-arg VERSION=${version} 
-  .
+  --build-arg VERSION=${version} .
 ```
 
 # build multiarch and push
@@ -53,8 +52,7 @@ docker buildx build --push \
     --tag sapian/slack-matrix-migration:latest \
     --tag quay.io/sapian/slack-matrix-migration:latest \
     --tag sapian/slack-matrix-migration:${version} \
-    --tag quay.io/sapian/slack-matrix-migration:${version} \
-    .
+    --tag quay.io/sapian/slack-matrix-migration:${version} .
 ```
 
 # Set developing enviroment
