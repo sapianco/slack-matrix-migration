@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Slack to Matrix Migration This project is a fork from https://github.com/Awesome-Technologies/slack-matrix-migration
+Migrates Users, Channels and all the conversations from a Slack export to Matrix Warning: It&amp;rsquo;s not recommended to use anything but a fresh/empty Synapse instance for migration
+However, you can configure it to import the Slack workspace to an empty federated server and use that to effectively migrate rooms to an existing Matrix server via federation. See &amp;lsquo;Federated setup (import to an existing Matrix server)&amp;rsquo; below." />
+<meta name="keywords" content="Sapian, Slack, Matrix, Migration" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://slack2matrix.sapian.cloud/doc/readme/" />
+
+
+    <title>
+        
+            Readme :: Slack to Matrix Migration 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Readme">
+<meta itemprop="description" content="Slack to Matrix Migration This project is a fork from https://github.com/Awesome-Technologies/slack-matrix-migration
+Migrates Users, Channels and all the conversations from a Slack export to Matrix Warning: It&rsquo;s not recommended to use anything but a fresh/empty Synapse instance for migration
+However, you can configure it to import the Slack workspace to an empty federated server and use that to effectively migrate rooms to an existing Matrix server via federation. See &lsquo;Federated setup (import to an existing Matrix server)&rsquo; below."><meta itemprop="datePublished" content="2021-08-26T11:29:29-05:00" />
+<meta itemprop="dateModified" content="2021-08-26T11:29:29-05:00" />
+<meta itemprop="wordCount" content="600"><meta itemprop="image" content="https://slack2matrix.sapian.cloud"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://slack2matrix.sapian.cloud"/>
+
+<meta name="twitter:title" content="Readme"/>
+<meta name="twitter:description" content="Slack to Matrix Migration This project is a fork from https://github.com/Awesome-Technologies/slack-matrix-migration
+Migrates Users, Channels and all the conversations from a Slack export to Matrix Warning: It&rsquo;s not recommended to use anything but a fresh/empty Synapse instance for migration
+However, you can configure it to import the Slack workspace to an empty federated server and use that to effectively migrate rooms to an existing Matrix server via federation. See &lsquo;Federated setup (import to an existing Matrix server)&rsquo; below."/>
+
+
+
+
+    <meta property="og:title" content="Readme" />
+<meta property="og:description" content="Slack to Matrix Migration This project is a fork from https://github.com/Awesome-Technologies/slack-matrix-migration
+Migrates Users, Channels and all the conversations from a Slack export to Matrix Warning: It&rsquo;s not recommended to use anything but a fresh/empty Synapse instance for migration
+However, you can configure it to import the Slack workspace to an empty federated server and use that to effectively migrate rooms to an existing Matrix server via federation. See &lsquo;Federated setup (import to an existing Matrix server)&rsquo; below." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slack2matrix.sapian.cloud/doc/readme/" /><meta property="og:image" content="https://slack2matrix.sapian.cloud"/><meta property="article:section" content="doc" />
+<meta property="article:published_time" content="2021-08-26T11:29:29-05:00" />
+<meta property="article:modified_time" content="2021-08-26T11:29:29-05:00" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-08-26 11:29:29 -0500 -05" />
+
+
+
+
+
+
+
+
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8G6G2VQ76"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-R8G6G2VQ76', { 'anonymize_ip': false });
+}
+</script>
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">python3 slack-matrix-migration/migrate.py</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts">Blog</a></li><li><a href="/doc/readme">Doc</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://slack2matrix.sapian.cloud/doc/readme/">Readme</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><a href="https://quay.io/repository/sapian/slack-matrix-migration"><img src="https://quay.io/repository/sapian/slack-matrix-migration/status" alt="Docker Repository on Quay" title="Docker Repository on Quay"></a></p>
+<h1 id="slack-to-matrix-migration">Slack to Matrix Migration</h1>
+<p><img src="/images/Logo_circular_Matrix_server_slack_migration_name_bg.svg" alt="Logo Slack to Matrix Sapian"></p>
+<p>This project is a fork from <a href="https://github.com/Awesome-Technologies/slack-matrix-migration">https://github.com/Awesome-Technologies/slack-matrix-migration</a></p>
+<p>Migrates Users, Channels and all the conversations from a Slack export to Matrix
+Warning: It&rsquo;s not recommended to use anything but a fresh/empty Synapse instance for migration</p>
+<p>However, you can configure it to import the Slack workspace to an empty federated server
+and use that to effectively migrate rooms to an existing Matrix server via federation.
+See &lsquo;Federated setup (import to an existing Matrix server)&rsquo; below.</p>
+<h1 id="why-the-fork">Why the Fork.</h1>
+<p>We need complete refactor directory project from <a href="https://github.com/Awesome-Technologies/slack-matrix-migration">Awesome-Technologies/slack-matrix-migration</a>
+To ensure the next enhacements.</p>
+<ul>
+<li>pip to pipenv</li>
+<li>Docker</li>
+<li>logging</li>
+<li>python 3.9</li>
+<li>alive-progress
+<ul>
+<li><img src="/images/example.gif" alt="progress bar"></li>
+</ul>
+</li>
+<li>better logging</li>
+<li>Env configuration and dot.env support</li>
+<li>Fix massive Invites for large Slack Teams.</li>
+<li>Multiarch
+<ul>
+<li>linux/arm64/v8</li>
+<li>linux/amd64</li>
+<li>linux/arm/v7</li>
+</ul>
+</li>
+</ul>
+<h1 id="build-and-push-to-docker-registry">Build And Push to docker registry</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">version<span style="color:#f92672">=</span>0.1.1
+docker build <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --build-arg BUILD_DATE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date -u +<span style="color:#e6db74">&#39;%Y-%m-%dT%H:%M:%SZ&#39;</span><span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --build-arg VCS_REF<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>git rev-parse --short HEAD<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --tag sapian/slack-matrix-migration:latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --tag sapian/slack-matrix-migration:<span style="color:#e6db74">${</span>version<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --tag quay.io/sapian/slack-matrix-migration:latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --tag quay.io/sapian/slack-matrix-migration:<span style="color:#e6db74">${</span>version<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --build-arg VERSION<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>version<span style="color:#e6db74">}</span> .
+</code></pre></div><h1 id="build-multiarch-and-push">build multiarch and push</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">version<span style="color:#f92672">=</span>0.1.1
+docker buildx build --push <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --platform linux/arm64/v8,linux/amd64,linux/arm/v7 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --build-arg BUILD_DATE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date -u +<span style="color:#e6db74">&#39;%Y-%m-%dT%H:%M:%SZ&#39;</span><span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --build-arg VCS_REF<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>git rev-parse --short HEAD<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --tag sapian/slack-matrix-migration:latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --tag quay.io/sapian/slack-matrix-migration:latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --tag sapian/slack-matrix-migration:<span style="color:#e6db74">${</span>version<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --tag quay.io/sapian/slack-matrix-migration:<span style="color:#e6db74">${</span>version<span style="color:#e6db74">}</span> .
+</code></pre></div><h1 id="set-developing-enviroment">Set developing enviroment</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda create -n slack-matrix-migration python<span style="color:#f92672">=</span>3.9
+/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/pip install pipenv
+/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/pipenv --python<span style="color:#f92672">=</span>/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/python install
+/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/pipenv --python<span style="color:#f92672">=</span>/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/python install --dev
+</code></pre></div><h2 id="ipyhon">Ipyhon</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/Workspace/slack-matrix-migration/
+conda activate slack-matrix-migration
+/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/pipenv run ipython
+</code></pre></div><h2 id="activate-conda-and-pipenv">Activate Conda and Pipenv</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/Workspace/slack-matrix-migration/
+conda activate slack-matrix-migration
+/opt/$USER/anaconda3/envs/slack-matrix-migration/bin/pipenv shell
+</code></pre></div><h1 id="do-migration">Do migration</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol start="2">
+<li>Set up a Synapse Homeserver</li>
+<li>Create an admin user on the Homeserver (make sure the username of the admin user does not match any existing slack user id)</li>
+<li>Copy <code>conf/matrix/migration_service.yaml</code> to somewhere reachable by your Homeserver</li>
+<li>Replace the <code>as_token</code> and <code>hs_token</code> in the <code>conf/matrix/migration_service.yaml</code> with a random string</li>
+<li>Add the Application Service to your <code>homeserver.yaml</code>:</li>
+</ol>
+<pre><code>app_service_config_files:
+  - /&lt;path to the yaml file&gt;/migration_service.yaml
+</code></pre><ol start="7">
+<li>Restart Synapse</li>
+</ol>
+<p>Notes:</p>
+<ul>
+<li>Make sure the migration script can access the <code>/_matrix/client</code> api and the <code>/_synapse</code> admin api</li>
+<li>Other Homeserver implementations may not support timestamped massaging, see <a href="https://matrix.org/docs/spec/application_service/r0.1.0#timestamp-massaging">https://matrix.org/docs/spec/application_service/r0.1.0#timestamp-massaging</a></li>
+<li>You may have to increase your homserver rate limits</li>
+</ul>
+<h2 id="federated-setup-import-to-an-existing-matrix-server">Federated setup (import to an existing Matrix server)</h2>
+<p>The idea is to migrate Slack to a fresh/empty Synapse instance, that is federated with your existing Matrix homeserver.
+All imported Slack users will be kicked after the migration is done, leaving only the admin user in the migrated rooms.
+Invite any users from your existing Matrix homeserver to the rooms manually using the admin user.</p>
+<p>You will need the following configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Set to &#39;True&#39; to invite all users to all rooms</span>
+<span style="color:#f92672">invite-all</span>: <span style="color:#66d9ef">True</span>
+<span style="color:#75715e"># Set to &#39;True&#39; to invite the admin user to all rooms</span>
+<span style="color:#f92672">create-as-admin</span>: <span style="color:#66d9ef">True</span>
+<span style="color:#75715e"># Set to &#39;True&#39; to kick all imported users from imported rooms</span>
+<span style="color:#f92672">kick-imported-users</span>: <span style="color:#66d9ef">True</span>
+<span style="color:#75715e"># Set to &#39;True&#39; to allow rooms to be joined from other homeservers</span>
+<span style="color:#f92672">federate-rooms</span>: <span style="color:#66d9ef">True</span>
+<span style="color:#75715e"># Append room and displayname suffixes</span>
+<span style="color:#f92672">room-suffix</span>: <span style="color:#e6db74">&#34; (slack import)&#34;</span>
+<span style="color:#f92672">name-suffix</span>: <span style="color:#e6db74">&#34; (slack import)&#34;</span>
+</code></pre></div><h2 id="running-the-migration">Running the migration</h2>
+<h2 id="set-enviroment-variables">Set Enviroment variables</h2>
+<p>Fill de file <code>.env</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#75715e">#LOG_LEVEL=DEBUG</span>
+<span style="color:#a6e22e">LOG_LEVEL</span><span style="color:#f92672">=</span><span style="color:#e6db74">INFO</span>
+<span style="color:#a6e22e">ADMIN_USER_MATRIX</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">changeme</span>
+<span style="color:#a6e22e">ADMIN_PASS_MATRIX</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">changeme</span>
+<span style="color:#a6e22e">PYTHONWARNINGS</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ignore:Unverified HTTPS request&#34;</span>
+</code></pre></div><h3 id="local-see-docker-run">Local (see docker run)</h3>
+<ol>
+<li><a href="#set-developing-enviroment">Set developing enviroment</a></li>
+<li><a href="#activate-conda-and-pipenv">Activate Conda and Pipenv</a></li>
+<li>Get a zipped Export of your Slack Workspace (<a href="https://slack.com/help/articles/201658943">https://slack.com/help/articles/201658943</a>) and put on <code>data/</code></li>
+<li>Copy <code>config/config_example.yaml</code> to <code>config/config.yaml</code> and edit to your needs (use the <code>as_token</code> from your <code>migration_service.yaml</code>)</li>
+<li>Run <code>python3 slack-matrix-migration/slack-matrix-migration/migrate.py</code></li>
+</ol>
+<h2 id="cleanup">Cleanup</h2>
+<ol>
+<li>Remove the Application Service from your <code>homeserver.yaml</code></li>
+<li>Delete the <code>migration_service.yaml</code></li>
+<li>Reset any increased rate limits</li>
+<li>Restart Synapse</li>
+</ol>
+<h3 id="run-in-docker">Run in Docker</h3>
+<ol>
+<li>
+<p>Get a zipped Export of your Slack Workspace (<a href="https://slack.com/help/articles/201658943">https://slack.com/help/articles/201658943</a>) and put on <code>data/</code></p>
+</li>
+<li>
+<p>Copy <code>config/config_example.yaml</code> to <code>config/config.yaml</code> and edit to your needs (use the <code>as_token</code> from your <code>migration_service.yaml</code>)</p>
+</li>
+<li>
+<p>Run Docker</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">docker run --env-file .env -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>/log:/usr/src/app/slack-matrix-migration/log -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>/data:/usr/src/app/slack-matrix-migration/data -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>/run:/usr/src/app/slack-matrix-migration/run -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>/conf:/usr/src/app/slack-matrix-migration/conf --rm -it sapian/slack-matrix-migration:latest
+</code></pre></div>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+
+
+
+    </body>
+</html>
