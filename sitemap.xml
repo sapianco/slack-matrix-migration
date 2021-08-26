@@ -2,12 +2,12 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>http://example.org/en/sitemap.xml</loc>
+    <loc>https://sapianco.github.io/slack-matrix-migration/en/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://example.org/es/sitemap.xml</loc>
+    <loc>https://sapianco.github.io/slack-matrix-migration/es/sitemap.xml</loc>
     
   </sitemap>
   

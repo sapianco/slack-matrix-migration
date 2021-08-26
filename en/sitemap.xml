@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/blog/</loc>
+    <loc>https://sapianco.github.io/slack-matrix-migration/blog/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://example.org/es/blog/"
+                href="https://sapianco.github.io/slack-matrix-migration/es/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/blog/"
+                href="https://sapianco.github.io/slack-matrix-migration/blog/"
                 />
   </url><url>
-    <loc>http://example.org/series/</loc>
+    <loc>https://sapianco.github.io/slack-matrix-migration/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://example.org/es/series/"
+                href="https://sapianco.github.io/slack-matrix-migration/es/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/series/"
+                href="https://sapianco.github.io/slack-matrix-migration/series/"
                 />
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>https://sapianco.github.io/slack-matrix-migration/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://example.org/es/"
+                href="https://sapianco.github.io/slack-matrix-migration/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/"
+                href="https://sapianco.github.io/slack-matrix-migration/"
                 />
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://sapianco.github.io/slack-matrix-migration/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://example.org/es/tags/"
+                href="https://sapianco.github.io/slack-matrix-migration/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/tags/"
+                href="https://sapianco.github.io/slack-matrix-migration/tags/"
                 />
   </url>
 </urlset>
