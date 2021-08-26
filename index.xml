@@ -19,5 +19,14 @@ Migrates Users, Channels and all the conversations from a Slack export to Matrix
 However, you can configure it to import the Slack workspace to an empty federated server and use that to effectively migrate rooms to an existing Matrix server via federation. See &amp;lsquo;Federated setup (import to an existing Matrix server)&amp;rsquo; below.</description>
     </item>
     
+    <item>
+      <title>Awesome logo</title>
+      <link>https://slack2matrix.sapian.cloud/posts/001_post/</link>
+      <pubDate>Thu, 26 Aug 2021 11:11:56 -0500</pubDate>
+      
+      <guid>https://slack2matrix.sapian.cloud/posts/001_post/</guid>
+      <description>Awesome logo </description>
+    </item>
+    
   </channel>
 </rss>

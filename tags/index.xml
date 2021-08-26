@@ -6,6 +6,43 @@
     <description>Recent content in Tags on Slack to Matrix Migration</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><atom:link href="https://slack2matrix.sapian.cloud/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 26 Aug 2021 11:11:56 -0500</lastBuildDate><atom:link href="https://slack2matrix.sapian.cloud/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>logo</title>
+      <link>https://slack2matrix.sapian.cloud/tags/logo/</link>
+      <pubDate>Thu, 26 Aug 2021 11:11:56 -0500</pubDate>
+      
+      <guid>https://slack2matrix.sapian.cloud/tags/logo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matrix</title>
+      <link>https://slack2matrix.sapian.cloud/tags/matrix/</link>
+      <pubDate>Thu, 26 Aug 2021 11:11:56 -0500</pubDate>
+      
+      <guid>https://slack2matrix.sapian.cloud/tags/matrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>migration</title>
+      <link>https://slack2matrix.sapian.cloud/tags/migration/</link>
+      <pubDate>Thu, 26 Aug 2021 11:11:56 -0500</pubDate>
+      
+      <guid>https://slack2matrix.sapian.cloud/tags/migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>slack</title>
+      <link>https://slack2matrix.sapian.cloud/tags/slack/</link>
+      <pubDate>Thu, 26 Aug 2021 11:11:56 -0500</pubDate>
+      
+      <guid>https://slack2matrix.sapian.cloud/tags/slack/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
