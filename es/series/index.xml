@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on Migracion de Slack a Matrix</title>
-    <link>https://sapianco.github.io/slack-matrix-migration/es/series/</link>
+    <link>https://slack2matrix.sapian.cloud/es/series/</link>
     <description>Recent content in Series on Migracion de Slack a Matrix</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><atom:link href="https://sapianco.github.io/slack-matrix-migration/es/series/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><atom:link href="https://slack2matrix.sapian.cloud/es/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sapianco.github.io/slack-matrix-migration/es/blog/</loc>
+    <loc>https://slack2matrix.sapian.cloud/es/blog/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sapianco.github.io/slack-matrix-migration/blog/"
+                href="https://slack2matrix.sapian.cloud/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://sapianco.github.io/slack-matrix-migration/es/blog/"
+                href="https://slack2matrix.sapian.cloud/es/blog/"
                 />
   </url><url>
-    <loc>https://sapianco.github.io/slack-matrix-migration/es/</loc>
+    <loc>https://slack2matrix.sapian.cloud/es/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sapianco.github.io/slack-matrix-migration/"
+                href="https://slack2matrix.sapian.cloud/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://sapianco.github.io/slack-matrix-migration/es/"
+                href="https://slack2matrix.sapian.cloud/es/"
                 />
   </url><url>
-    <loc>https://sapianco.github.io/slack-matrix-migration/es/series/</loc>
+    <loc>https://slack2matrix.sapian.cloud/es/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sapianco.github.io/slack-matrix-migration/series/"
+                href="https://slack2matrix.sapian.cloud/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://sapianco.github.io/slack-matrix-migration/es/series/"
+                href="https://slack2matrix.sapian.cloud/es/series/"
                 />
   </url><url>
-    <loc>https://sapianco.github.io/slack-matrix-migration/es/tags/</loc>
+    <loc>https://slack2matrix.sapian.cloud/es/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sapianco.github.io/slack-matrix-migration/tags/"
+                href="https://slack2matrix.sapian.cloud/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://sapianco.github.io/slack-matrix-migration/es/tags/"
+                href="https://slack2matrix.sapian.cloud/es/tags/"
                 />
   </url>
 </urlset>
