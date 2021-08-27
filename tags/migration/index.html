@@ -60,7 +60,24 @@
 
 
 
+<div id="tripetto"></div>
+<script src="https://cdn.jsdelivr.net/npm/tripetto-runner-foundation"></script>
+<script src="https://cdn.jsdelivr.net/npm/tripetto-runner-chat"></script>
+<script src="https://cdn.jsdelivr.net/npm/tripetto-services"></script>
+<script>
+var tripetto = TripettoServices.init({ token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiWkx5TTNVbU9qQlNJRGJIbzJ6VU9iL3dmRXQvYTZ1c0VsaGh3RWVVLzRzZz0iLCJkZWZpbml0aW9uIjoiL0d3M1hOSWlrQXFvOFRLdXFxd0ZzTGFFS1M0dVFQQmVuSVBJaERqeXZhND0iLCJ0eXBlIjoiY29sbGVjdCJ9.H-sUu_YI4Cj1ztdc11jT_tbGOu7WKIh0qGUA7XZxwnM" });
 
+TripettoChat.run({
+    element: document.getElementById("tripetto"),
+    definition: tripetto.definition,
+    styles: tripetto.styles,
+    l10n: tripetto.l10n,
+    locale: tripetto.locale,
+    translations: tripetto.translations,
+    attachments: tripetto.attachments,
+    onSubmit: tripetto.onSubmit
+});
+</script>
 
 
     
