@@ -518,7 +518,7 @@ def migrate_dms(roomFile, config):
 
     # channels
     channelData = json.load(roomFile)
-    with alive_bar(len(channelData), bar = 'squares', spinner = 'waves2') as bar:
+    with alive_bar(len(channelData), bar = 'bubbles', spinner = 'waves2') as bar:
         for channel in channelData:
             if config["skip-archived"]:
                 if channel["is_archived"] == True:
@@ -800,7 +800,7 @@ def migrate_messages(fileList, matrix_room, config, tick, log):
     txnId = 1
     progress = 0
 
-    with alive_bar(bar = 'checks', spinner = 'waves2', manual=True) as bar:
+    with alive_bar(bar = 'bubbles', spinner = 'waves2', manual=True) as bar:
         for file in fileList:
             log.debug("prcessing file {}".format(file))
             try:
