@@ -901,7 +901,7 @@ def main():
     # create DMs
     if "dms.json" in jsonFiles and not dmLUT:
         log.info("Creating DMS")
-        roomlist_dms = migrate_dms(jsonFiles["dms.json"], config, admin_user)
+        roomlist_dms = migrate_dms(jsonFiles["dms.json"], config)
 
     # write LUTs to file to be able to load from later if something goes wrong
     if not read_luts:
