@@ -437,7 +437,7 @@ def migrate_rooms(roomFile, config, admin_user):
 
     # channels
     channelData = json.load(roomFile)
-    with alive_bar(len(channelData), bar = 'hollow', spinner = 'waves2') as bar:
+    with alive_bar(len(channelData), bar = 'bubbles', spinner = 'waves2') as bar:
         for channel in channelData:
             if config["skip-archived"]:
                 if channel["is_archived"] == True:
