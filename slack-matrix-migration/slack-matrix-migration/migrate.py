@@ -437,7 +437,7 @@ def migrate_rooms(roomFile, config, admin_user):
 
     # channels
     channelData = json.load(roomFile)
-    with alive_bar(len(channelData), bar = 'hollow', spinner = 'waves2') as bar:
+    with alive_bar(len(channelData), bar = 'bubbles', spinner = 'waves2') as bar:
         for channel in channelData:
             if config["skip-archived"]:
                 if channel["is_archived"] == True:
@@ -518,7 +518,7 @@ def migrate_dms(roomFile, config):
 
     # channels
     channelData = json.load(roomFile)
-    with alive_bar(len(channelData), bar = 'squares', spinner = 'waves2') as bar:
+    with alive_bar(len(channelData), bar = 'bubbles', spinner = 'waves2') as bar:
         for channel in channelData:
             if config["skip-archived"]:
                 if channel["is_archived"] == True:
@@ -800,7 +800,7 @@ def migrate_messages(fileList, matrix_room, config, tick, log):
     txnId = 1
     progress = 0
 
-    with alive_bar(bar = 'checks', spinner = 'waves2', manual=True) as bar:
+    with alive_bar(bar = 'bubbles', spinner = 'waves2', manual=True) as bar:
         for file in fileList:
             log.debug("prcessing file {}".format(file))
             try:
@@ -901,7 +901,7 @@ def main():
     # create DMs
     if "dms.json" in jsonFiles and not dmLUT:
         log.info("Creating DMS")
-        roomlist_dms = migrate_dms(jsonFiles["dms.json"], config, admin_user)
+        roomlist_dms = migrate_dms(jsonFiles["dms.json"], config)
 
     # write LUTs to file to be able to load from later if something goes wrong
     if not read_luts:
