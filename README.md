@@ -93,7 +93,7 @@ conda activate slack-matrix-migration
 3. Create an admin user on the Homeserver (make sure the username of the admin user does not match any existing slack user id)
 4. Copy `conf/matrix/migration_service.yaml` to somewhere reachable by your Homeserver
 5. Replace the `as_token` and `hs_token` in the `conf/matrix/migration_service.yaml` with a random string
-6. Add the Application Service to your `homeserver.yaml`:
+6. Add the Application Service to your `homeserver.yaml` (usually /etc/matrix-synapse/homeserver.yaml):
 ```
 app_service_config_files:
   - /<path to the yaml file>/migration_service.yaml
